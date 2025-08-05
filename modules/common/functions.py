@@ -443,12 +443,12 @@ def cocoa_time(seconds):
 	"""Convert cocoa webkit DB timestamp to ISO8601, UTC format.
 	"""
 	if seconds not in ['', None, 0]:
-		timedelta = None
+		time = None
 		if isinstance(seconds, float):
-			timedelta = timedelta(seconds=int(seconds))
+			time = timedelta(seconds=int(seconds))
 		if isinstance(seconds, datetime):
-			timedelta = timedelta(seconds=int(seconds.timestamp()))
-		timestamp = datetime(2001, 1, 1) + timedelta
+			time = timedelta(seconds=int(seconds.timestamp()))
+		timestamp = datetime(2001, 1, 1) + time
 		return parser.parse(str(timestamp)).isoformat() + 'Z'
 	else:
 		return ''
