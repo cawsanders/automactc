@@ -443,7 +443,7 @@ def cocoa_time(seconds):
 	"""Convert cocoa webkit DB timestamp to ISO8601, UTC format.
 	"""
 	if seconds not in ['', None, 0]:
-		utcnow = seconds.utcnow().timestamp()
+		utcnow = datetime(seconds).utcnow().timestamp()
 		timestamp = datetime(2001, 1, 1) + timedelta(seconds=int(utcnow))
 		return parser.parse(str(timestamp)).isoformat() + 'Z'
 	else:
