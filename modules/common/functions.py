@@ -447,7 +447,7 @@ def cocoa_time(seconds):
 		if isinstance(seconds, float):
 			timedelta = timedelta(seconds=int(seconds))
 		if isinstnace(seconds, datetime):
-			timedelta = timedelta(seconds=int(seconds.timestamp())
+			timedelta = timedelta(seconds=int(seconds.timestamp()))
 		timestamp = datetime(2001, 1, 1) + timedelta
 		return parser.parse(str(timestamp)).isoformat() + 'Z'
 	else:
